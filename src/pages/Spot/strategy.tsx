@@ -396,9 +396,6 @@ const SpotStrategy: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<SpotStrategyItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.spot.strategy.title',
-        })}
         actionRef={actionRef}
         pagination={paginationProps}
         search={false}

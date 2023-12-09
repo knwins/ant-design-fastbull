@@ -18,7 +18,7 @@ export async function queryExchangeList(
     data: ExchangeItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/exchange/list', {
+  }>(host.api + 'api/manage/exchange/list', {
     method: 'POST',
     params: {
       ...params,

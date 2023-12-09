@@ -1,12 +1,12 @@
+import { PageContainer } from '@ant-design/pro-layout';
 import type { ActionType, ProColumns } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
-import { PageContainer } from '@ant-design/pro-layout';
 import { FormattedMessage, useIntl } from '@umijs/max';
-import React, { useRef } from 'react';
 import { Typography } from 'antd';
-const { Paragraph } = Typography;
+import React, { useRef } from 'react';
 import type { CoinThrendItem } from './data';
 import { queryCoinThrendList } from './service';
+const { Paragraph } = Typography;
 
 const Thrend: React.FC = () => {
   const actionRef = useRef<ActionType>();
@@ -95,9 +95,6 @@ const Thrend: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<CoinThrendItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.coin.thrend.title',
-        })}
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={{

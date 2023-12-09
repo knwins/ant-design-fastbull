@@ -15,7 +15,7 @@ export async function querySpotList(
     data: SpotItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/spot/list', {
+  }>(host.api + 'api/manage/spot/list', {
     method: 'POST',
     params: {
       ...params,
@@ -37,7 +37,7 @@ export async function querySpotStrategyList(
     /** 列表的内容总数 */
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/spot/strategy/list', {
+  }>(host.api + 'api/manage/spot/strategy/list', {
     method: 'POST',
     params: {
       ...params,
@@ -53,7 +53,7 @@ export async function addSpotStrategy(
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/spot/strategy/add', {
+  }>(host.api + 'api/manage/spot/strategy/add', {
     data,
     method: 'POST',
     ...(options || {}),
@@ -67,7 +67,7 @@ export async function updateSpotStrategy(
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/spot/strategy/update', {
+  }>(host.api + 'api/manage/spot/strategy/update', {
     data,
     method: 'PUT',
     ...(options || {}),
@@ -81,7 +81,7 @@ export async function removeSpotStrategy(
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/spot/strategy/delete', {
+  }>(host.api + 'api/manage/spot/strategy/delete', {
     data,
     method: 'DELETE',
     ...(options || {}),
@@ -101,7 +101,7 @@ export async function querySpotTradeList(
     data: SpotTradeItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/spot/trade/list', {
+  }>(host.api + 'api/manage/spot/trade/list', {
     method: 'POST',
     params: {
       ...params,
@@ -114,7 +114,7 @@ export async function getSpotTrade(params: { [id: string]: any }, options?: { [i
   return request<{
     data: SpotTradeItem;
     success?: boolean;
-  }>(host.api+'api/admin/spot/trade/get', {
+  }>(host.api+'api/manage/spot/trade/get', {
     params: {
       ...params,
     },

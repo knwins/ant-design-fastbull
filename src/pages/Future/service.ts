@@ -16,7 +16,7 @@ export async function queryFutureList(
     /** 列表的内容总数 */
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/future/list', {
+  }>(host.api + 'api/manage/future/list', {
     method: 'POST',
     params: {
       ...params,
@@ -31,7 +31,7 @@ export async function getFuture(params: { [id: string]: any }, options?: { [id: 
   return request<{
     data: FutureItem;
     success?: boolean;
-  }>(host.api+'api/admin/future/get', {
+  }>(host.api+'api/manage/future/get', {
     params: {
       ...params,
     },
@@ -53,7 +53,7 @@ export async function queryFutureStrategyList(
     /** 列表的内容总数 */
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/future/strategy/list', {
+  }>(host.api + 'api/manage/future/strategy/list', {
     method: 'POST',
     params: {
       ...params,
@@ -69,7 +69,7 @@ export async function addFutureStrategy(
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/future/strategy/add', {
+  }>(host.api + 'api/manage/future/strategy/add', {
     data,
     method: 'POST',
     ...(options || {}),
@@ -83,7 +83,7 @@ export async function updateFutureStrategy(
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/future/strategy/update', {
+  }>(host.api + 'api/manage/future/strategy/update', {
     data,
     method: 'PUT',
     ...(options || {}),
@@ -97,7 +97,7 @@ export async function removeFutureStrategy(
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/future/strategy/delete', {
+  }>(host.api + 'api/manage/future/strategy/delete', {
     data,
     method: 'DELETE',
     ...(options || {}),
@@ -116,7 +116,7 @@ export async function queryFutureTradeList(
     data: FutureTradeItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/future/trade/list', {
+  }>(host.api + 'api/manage/future/trade/list', {
     method: 'POST',
     params: {
       ...params,
@@ -129,7 +129,7 @@ export async function getFutureTrade(params: { [id: string]: any }, options?: { 
   return request<{
     data: FutureTradeItem;
     success?: boolean;
-  }>(host.api+'api/admin/future/trade/get', {
+  }>(host.api+'api/manage/future/trade/get', {
     params: {
       ...params,
     },
@@ -150,7 +150,7 @@ export async function queryFutureExtOrderList(
     data: FutureExtOrderItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/future/ext/order/list', {
+  }>(host.api + 'api/manage/future/ext/order/list', {
     method: 'POST',
     params: {
       ...params,
@@ -165,7 +165,7 @@ export async function getFutureExtOrder(params: { [id: string]: any }, options?:
   return request<{
     data: FutureExtOrderItem;
     success?: boolean;
-  }>(host.api+'api/admin/future/ext/order/get', {
+  }>(host.api+'api/manage/future/ext/order/get', {
     params: {
       ...params,
     },

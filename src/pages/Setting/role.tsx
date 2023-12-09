@@ -178,7 +178,7 @@ const RoleList: React.FC = () => {
     <div>
       <PageContainer>
         <ProTable<RoleItem, RoleParams>
-          headerTitle=""
+        
           actionRef={actionRef}
           pagination={paginationProps}
           rowKey={(record) => record.id}

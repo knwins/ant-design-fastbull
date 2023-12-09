@@ -16,7 +16,7 @@ export async function queryCoinList(
     data: CoinItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/coin/list', {
+  }>(host.api + 'api/manage/coin/list', {
     method: 'POST',
     params: {
       ...params,
@@ -30,7 +30,7 @@ export async function addCoin(data: { [id: string]: any }, options?: { [id: stri
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/coin/add', {
+  }>(host.api + 'api/manage/coin/add', {
     data,
     method: 'POST',
     ...(options || {}),
@@ -41,7 +41,7 @@ export async function updateCoin(data: { [key: string]: any }, options?: { [key:
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/coin/update', {
+  }>(host.api + 'api/manage/coin/update', {
     data,
     method: 'PUT',
     ...(options || {}),
@@ -52,7 +52,7 @@ export async function removeCoin(data: { [key: string]: any }, options?: { [key:
   return request<{
     success?: boolean;
     errorMessage?: string;
-  }>(host.api + 'api/admin/coin/delete', {
+  }>(host.api + 'api/manage/coin/delete', {
     data,
     method: 'DELETE',
     ...(options || {}),
@@ -76,7 +76,7 @@ export async function queryCoinPriceList(
     data: CoinPriceItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/coin/price/list', {
+  }>(host.api + 'api/manage/coin/price/list', {
     method: 'POST',
     params: {
       ...params,
@@ -98,7 +98,7 @@ export async function queryCoinThrendList(
     data: CoinThrendItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/coin/thrend/list', {
+  }>(host.api + 'api/manage/coin/thrend/list', {
     method: 'POST',
     params: {
       ...params,
@@ -122,7 +122,7 @@ export async function queryExchangeList(
     data: ExchangeItem[];
     total?: number;
     success?: boolean;
-  }>(host.api + 'api/admin/exchange/list', {
+  }>(host.api + 'api/manage/exchange/list', {
     method: 'POST',
     params: {
       ...params,

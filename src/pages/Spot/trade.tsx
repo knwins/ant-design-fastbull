@@ -221,9 +221,6 @@ const SpotTrade: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<SpotTradeItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.spot.trade.title',
-        })}
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={{

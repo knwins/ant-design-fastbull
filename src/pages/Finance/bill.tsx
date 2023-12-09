@@ -210,7 +210,6 @@ const BillList: React.FC = () => {
     <div>
       <PageContainer>
         <ProTable<BillItem, BillParams>
-          headerTitle=""
           actionRef={actionRef}
           pagination={paginationProps}
           rowKey={(record) => record.id}

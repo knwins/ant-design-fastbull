@@ -2,9 +2,9 @@ import { ModalForm, ProFormMoney, ProFormSelect, ProFormText } from '@ant-design
 import React from 'react';
 import { useIntl } from '@umijs/max';
 import { useRequest } from 'umi';
-import type { BillInvestItem, BillInvestParams} from '../../Bill/data';
+import type { BillInvestItem, BillInvestParams} from '../../Finance/data';
 import { UserItem } from '../data';
-import {queryBillTypeList} from '../../Bill/service';
+import {queryBillTypeList} from '../../Finance/service';
 export type PageParams = {
   /** 当前的页码 */
   current?: number;

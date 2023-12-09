@@ -80,9 +80,7 @@ const Task: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<CoinPriceItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.coin.price.title',
-        })}
+       
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={{

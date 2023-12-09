@@ -205,9 +205,6 @@ const Future: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<FutureStrategyItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.future.strategy.title',
-        })}
         actionRef={actionRef}
         pagination={paginationProps}
         search={false}

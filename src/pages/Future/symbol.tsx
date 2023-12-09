@@ -290,9 +290,6 @@ const Future: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<FutureItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.future.coin.title',
-        })}
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={{

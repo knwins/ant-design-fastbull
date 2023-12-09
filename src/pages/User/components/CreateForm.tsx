@@ -4,7 +4,7 @@ import React from 'react';
 import type { UserParams } from '@/pages/User/data';
 import { queryUserList } from '@/pages/User/service';
 import { useIntl } from '@umijs/max';
-import type { BillItem, BillParams } from '../../Bill/data';
+import type { BillItem, BillParams } from '../../Finance/data';
 export type PageParams = {
   /** 当前的页码 */
   current?: number;

@@ -14,7 +14,7 @@ export default {
   },
   pre: {
     '/api/': {
-      target: 'https//api.fans365.net:8083',
+      target: 'https//front.fastbull.io',
       changeOrigin: true,
       pathRewrite: { '^': '' },
     },

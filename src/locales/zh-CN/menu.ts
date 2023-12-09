@@ -23,21 +23,21 @@ export default {
 
   /* future */
   'menu.future': '合约管理',
-  'menu.future.coin': '交易对',
+  'menu.future.coin': '交易对列表',
   'menu.future.trade': '交易列表',
   'menu.future.strategy': '策略列表',
   'menu.future.order': '订单列表',
 
   /* spot */
   'menu.spot': '现货管理',
-  'menu.spot.coin': '交易对',
+  'menu.spot.coin': '交易对列表',
   'menu.spot.trade': '交易列表',
   'menu.spot.strategy': '策略列表',
   'menu.spot.order': '订单列表',
 
-  /* exchange */
+  /* coin */
   'menu.coin': '代币管理',
-  'menu.coin.symbol': '交易对',
+  'menu.coin.symbol': '交易对列表',
   'menu.coin.exchange': '交易所API',
   'menu.coin.thrend': '监测模块',
   'menu.coin.price': '实时币价',
@@ -57,7 +57,7 @@ export default {
   /* 信息 */
   'menu.information': '信息管理',
   'menu.information.article': '文章列表',
-  'menu.information.articleType': '文章分类列表',
+  'menu.information.article.type': '文章分类列表',
   'menu.information.express': '快讯列表',
   'menu.account.logout':'退出',
   'menu.account.settings':'设置',

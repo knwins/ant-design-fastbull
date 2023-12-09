@@ -190,9 +190,6 @@ const BillTypeList: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<BillTypeItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.bill.type.title',
-        })}
         actionRef={actionRef}
         search={false}
         pagination={paginationProps}

@@ -7,8 +7,8 @@ import { FormattedMessage, useIntl } from '@umijs/max';
 import { Drawer, message } from 'antd';
 import React, { useRef, useState } from 'react';
 import BillInvestCreateForm from './components/BillInvestCreateForm';
-import type { BillInvestItem } from '../Bill/data';
-import { addBill } from '../Bill/service';
+import type { BillInvestItem } from '../Finance/data';
+import { addBill } from '../Finance/service';
 import type { UserItem, UserLogItem, UserLogParams, UserParams } from './data';
 import { queryUserList, queryUserLogList } from './service';
 

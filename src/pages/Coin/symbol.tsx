@@ -205,9 +205,7 @@ const Thrend: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<CoinItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.coin.title',
-        })}
+       
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={{

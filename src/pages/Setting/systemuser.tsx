@@ -258,9 +258,6 @@ const SystemUser: React.FC = () => {
   return (
     <PageContainer title=" ">
       <ProTable<SystemUserItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.system.user.title',
-        })}
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={false}

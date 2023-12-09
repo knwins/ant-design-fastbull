@@ -216,9 +216,6 @@ const FutureTrade: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<FutureTradeItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.future.trade.title',
-        })}
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={{

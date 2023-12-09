@@ -452,7 +452,9 @@ export default {
   'pages.coin.state.required': '请选择状态',
   'pages.coin.state.placeholder': '请选择状态',
 
-  'pages.coin.symbol': '交易对',
+    /* coin.symbol */
+  'pages.coin.symbol.title':'交易对列表',
+  'pages.coin.symbol': '交易对列表',
   'pages.coin.symbol.required': '请输入交易对',
   'pages.coin.symbol.placeholder': '请输入交易对',
 

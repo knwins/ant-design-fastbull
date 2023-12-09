@@ -232,7 +232,7 @@ const PrivilegeList: React.FC = () => {
     <div>
       <PageContainer>
         <ProTable<PrivilegeItem, PrivilegeParams>
-          headerTitle=""
+         
           actionRef={actionRef}
           pagination={paginationProps}
           rowKey={(record) => record.id}

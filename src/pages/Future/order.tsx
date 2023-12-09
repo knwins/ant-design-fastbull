@@ -189,9 +189,6 @@ const FutureExtOrder: React.FC = () => {
   return (
     <PageContainer>
       <ProTable<FutureExtOrderItem>
-        headerTitle={intl.formatMessage({
-          id: 'pages.future.ext.order.title',
-        })}
         actionRef={actionRef}
         rowKey={(record) => record.id}
         search={{

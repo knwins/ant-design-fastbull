@@ -2,7 +2,7 @@
 /* eslint-disable */
 import { request } from 'umi';
 import host from '../../host';
-import type { RoleItem, SiteConfigItem, SystemUserItem } from './data';
+import type { RoleItem, SiteConfigItem, SystemUserItem, TaskItem } from './data';
 import { PrivilegeItem } from './data';
 
 export async function getSiteConfig(
@@ -293,6 +293,32 @@ export async function initPassword(data: { [key: string]: any }, options?: { [ke
   }>(host.api + 'api/system/user/init_password', {
     data,
     method: 'PUT',
+    ...(options || {}),
+  });
+}
+
+/**Task */
+
+export async function queryTaskList(
+  params: {
+    // query
+    /** 当前的页码 */
+    current?: number;
+    /** 页面的容量 */
+    pageSize?: number;
+  },
+  options?: { [key: string]: any },
+) {
+  return request<{
+    data: TaskItem[];
+    /** 列表的内容总数 */
+    total?: number;
+    success?: boolean;
+  }>(host.api + 'api/system/task/list', {
+    method: 'POST',
+    params: {
+      ...params,
+    },
     ...(options || {}),
   });
 }

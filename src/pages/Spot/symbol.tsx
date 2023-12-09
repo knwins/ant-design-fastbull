@@ -126,9 +126,6 @@ const Spot: React.FC = () => {
   ];
   return (
     <ProTable<SpotItem>
-      headerTitle={intl.formatMessage({
-        id: 'pages.systemuser.title',
-      })}
       actionRef={actionRef}
       rowKey={(record) => record.id}
       search={{

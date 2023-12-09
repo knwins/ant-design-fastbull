@@ -1,5 +1,6 @@
 
 export default {
-    api:"https://front.fastbull.io/",name:"FastBull" 
+  //https://front.fastbull.io/
+    api:"http://localhost:8080/",name:"FastBull" 
   };
   

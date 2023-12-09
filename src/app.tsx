@@ -74,7 +74,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       content: initialState?.currentUser?.username,
     },
     menu: {
-      locale: false, //我们自己匹配语言
+     locale:false,
       request: async () => {
         const { data } = await privilegeMenus();
         return loopMenuItem(data);
