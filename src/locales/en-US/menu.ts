@@ -43,7 +43,7 @@ export default {
 
   /* setting */
   'menu.setting': 'System Setting',
-  'menu.setting.adminuser': 'AdminUser',
+  'menu.setting.system.user': 'SystemUser',
   'menu.setting.cofing': 'Config',
   'menu.setting.task': 'Task',
 

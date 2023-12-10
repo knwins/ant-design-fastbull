@@ -20,7 +20,7 @@ const NoticeForm: React.FC<NoticeFormProps> = (props) => {
   return (
     <Modal
       footer={false}
-      visible={visible}
+      open={visible}
       title={current.title}
       width={640}
       onCancel={onCancel}

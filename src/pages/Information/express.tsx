@@ -171,7 +171,7 @@ const Express: React.FC = () => {
     {
       title: <FormattedMessage id="pages.express.showEndtime" />,
       dataIndex: 'showEndtime',
-      valueType: 'dateTime',
+      valueType: 'date',
       hideInSearch: true,
     },
 

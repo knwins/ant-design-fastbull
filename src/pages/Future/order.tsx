@@ -4,10 +4,10 @@ import { PageContainer } from '@ant-design/pro-layout';
 import type { ActionType, ProColumns } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
 import { FormattedMessage, useIntl } from '@umijs/max';
-import React, { useRef, useState } from 'react';
 import { Drawer } from 'antd';
+import React, { useRef, useState } from 'react';
 import type { FutureExtOrderItem, FutureExtOrderParams } from './data';
-import { queryFutureExtOrderList, getFutureExtOrder } from './service';
+import { getFutureExtOrder, queryFutureExtOrderList } from './service';
 
 const FutureExtOrder: React.FC = () => {
   const actionRef = useRef<ActionType>();
@@ -213,7 +213,7 @@ const FutureExtOrder: React.FC = () => {
 
       <Drawer
         width={600}
-        visible={showDetail}
+        open={showDetail}
         onClose={() => {
           setCurrentRow(undefined);
           setShowDetail(false);
