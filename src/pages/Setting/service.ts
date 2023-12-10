@@ -21,6 +21,7 @@ export async function getSiteConfig(
   });
 }
 
+
 export async function updateSiteConfig(
   data: { [key: string]: any },
   options?: { [key: string]: any },
@@ -46,7 +47,6 @@ export async function queryPrivilegeList(
 ) {
   return request<{
     data: PrivilegeItem[];
-    /** 列表的内容总数 */
     total?: number;
     success?: boolean;
   }>(host.api + 'api/system/privilege/list', {

@@ -8,8 +8,6 @@ import { getSiteConfig, updateSiteConfig } from './service';
 import styles from './style.less';
 
 const SiteConfigForm: React.FC = () => {
-
-
   //国际化
   const intl = useIntl();
 
@@ -17,7 +15,6 @@ const SiteConfigForm: React.FC = () => {
     return getSiteConfig({ id: 1 });
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-shadow
   const handleFinish = async (fields: any, currentRow?: SiteConfigParams) => {
     try {
       const loadingHiddle = message.loading(
@@ -26,14 +23,17 @@ const SiteConfigForm: React.FC = () => {
         }),
         0,
       );
-      const { success, errorMessage } = await updateSiteConfig({
+      const { success } = await updateSiteConfig({
         ...currentRow,
         ...fields,
       });
       loadingHiddle();
       if (success) {
-        message.success(errorMessage);
-        
+        message.success(
+          intl.formatMessage({
+            id: 'pages.tip.success',
+          }),
+        );
         return true;
       }
       return false;
@@ -59,7 +59,7 @@ const SiteConfigForm: React.FC = () => {
               layout="vertical"
               onFinish={handleFinish}
               initialValues={{
-                ...currentSiteConfig
+                ...currentSiteConfig,
               }}
             >
               <ProFormText name="id" hidden={true} />

@@ -91,12 +91,16 @@ const Future: React.FC = () => {
               id: 'pages.tip.loading',
             }),
           );
-          const { success, errorMessage } = await removeFutureStrategy({
+          const { success } = await removeFutureStrategy({
             id: selectedRows.id,
           });
           if (success) {
             loadingHidde();
-            message.success(errorMessage);
+            message.success(
+              intl.formatMessage({
+                id: 'pages.tip.success',
+              }),
+            );
             if (actionRef.current) {
               actionRef.current.reload();
             }

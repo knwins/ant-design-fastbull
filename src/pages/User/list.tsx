@@ -166,7 +166,6 @@ const UserList: React.FC = () => {
     <PageContainer>
      
       <ProTable<UserItem, UserParams>
-        headerTitle=""
         actionRef={actionRef}
         pagination={paginationProps}
         rowKey={(record) => record.id}
