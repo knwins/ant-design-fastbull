@@ -13,7 +13,6 @@ const Future: React.FC = () => {
   const actionRef = useRef<ActionType>();
   const [showDetail, setShowDetail] = useState<boolean>(false);
   const [currentRow, setCurrentRow] = useState<FutureItem | undefined>(undefined);
-
   const [params, setParams] = useState<Partial<FutureParams> | undefined>(undefined);
 
   //国际化
@@ -36,6 +35,8 @@ const Future: React.FC = () => {
       hideInSearch: true,
       valueType: 'date',
       width: '120px',
+    
+      hideInTable: true,
     },
 
     {
@@ -54,13 +55,23 @@ const Future: React.FC = () => {
       hideInSearch: false,
       hideInForm: true,
       width: '120px',
+    },
+
+    {
+      title: <FormattedMessage id="pages.future.coin.username" />,
+      dataIndex: ['user', 'name'],
+      hideInSearch: true,
+      valueType: 'text',
+      copyable: true,
       render: (dom, entity) => {
         return (
           <a
-            key="detail"
             onClick={() => {
-              setCurrentRow(entity);
-              setShowDetail(true);
+              const params: FutureParams = {
+                userId:entity.user.id,
+              };
+              setParams(params);
+              actionRef.current?.reloadAndRest?.();
             }}
           >
             {dom}
@@ -69,7 +80,6 @@ const Future: React.FC = () => {
       },
     },
 
-
     {
       title: <FormattedMessage id="pages.future.coin.leverage" />,
       dataIndex: 'leverage',
@@ -86,6 +96,7 @@ const Future: React.FC = () => {
       hideInSearch: true,
       hideInForm: true,
       width: 'md',
+      hideInTable: true,
     },
     {
       title: <FormattedMessage id="pages.future.coin.balance" />,
@@ -93,6 +104,7 @@ const Future: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
+      hideInTable: true,
       width: 'md',
     },
 
@@ -102,102 +114,7 @@ const Future: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
-      width: 'md',
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.state" />,
-      dataIndex: 'state',
-      hideInSearch: true,
-      valueType: 'text',
-      width: '120px',
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.runEnvironment" />,
-      dataIndex: 'runEnvironment',
-      valueType: 'text',
-      width: '120px',
-      valueEnum: {
-        TEST: {
-          text: '体验',
-          runEnvironment: 'TEST',
-        },
-        PRO: {
-          text: '正式',
-          runEnvironment: 'PRO',
-        },
-      },
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.profitSum" />,
-      dataIndex: 'profitSum',
-      valueType: 'text',
-      hideInSearch: true,
-      hideInForm: true,
-      width: 'md',
-    },
-  ];
-
-  const columnsDetail: ProColumns<FutureItem>[] = [
-    {
-      title: <FormattedMessage id="pages.future.coin.updateTime" />,
-      dataIndex: 'updateTime',
-      hideInSearch: true,
-      valueType: 'date',
-      width: '120px',
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.symbol" />,
-      dataIndex: 'symbol',
-      valueType: 'text',
-      hideInSearch: false,
-      hideInForm: true,
-      width: '120px',
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.username" />,
-      dataIndex: ['user', 'name'],
-      hideInSearch: true,
-      valueType: 'text',
-      width: 'md',
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.leverage" />,
-      dataIndex: 'leverage',
-      valueType: 'text',
-      hideInSearch: true,
-      hideInForm: true,
-      width: 'md',
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.capital" />,
-      dataIndex: 'capital',
-      valueType: 'text',
-      hideInSearch: true,
-      hideInForm: true,
-      width: 'md',
-    },
-    {
-      title: <FormattedMessage id="pages.future.coin.balance" />,
-      dataIndex: 'balance',
-      valueType: 'text',
-      hideInSearch: true,
-      hideInForm: true,
-      width: 'md',
-    },
-
-    {
-      title: <FormattedMessage id="pages.future.coin.frequency" />,
-      dataIndex: 'frequency',
-      valueType: 'text',
-      hideInSearch: true,
-      hideInForm: true,
+      hideInTable: true,
       width: 'md',
     },
 
@@ -236,15 +153,25 @@ const Future: React.FC = () => {
     },
 
     {
-      title: <FormattedMessage id="pages.future.coin.exchange.name" />,
-      dataIndex: ['exchange', 'name'],
-      valueType: 'text',
-      hideInSearch: true,
-      hideInForm: true,
-      width: 'md',
+      title: <FormattedMessage id="pages.option" />,
+      dataIndex: 'option',
+      valueType: 'option',
+      hideInDescriptions: true,
+      render: (_, record) => [
+        <a
+          key="detail"
+          onClick={(e) => {
+            setCurrentRow(record);
+            setShowDetail(true);
+          }}
+        >
+          <FormattedMessage id="pages.detail" />
+        </a>,
+      ],
     },
   ];
 
+ 
   const columnsOrder: ProColumns<FutureExtOrderItem>[] = [
     {
       title: <FormattedMessage id="pages.update.time" />,
@@ -253,8 +180,6 @@ const Future: React.FC = () => {
       valueType: 'dateTime',
       width: '160px',
     },
-
-    
 
     {
       title: <FormattedMessage id="pages.future.ext.order.state" />,
@@ -329,7 +254,7 @@ const Future: React.FC = () => {
             params={{
               id: currentRow?.id,
             }}
-            columns={columnsDetail as ProDescriptionsItemProps<FutureItem>[]}
+            columns={columns as ProDescriptionsItemProps<FutureItem>[]}
           />
         )}
 
