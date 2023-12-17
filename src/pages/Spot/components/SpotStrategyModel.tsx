@@ -236,7 +236,7 @@ const SpotStrategyModel: React.FC<SpotStrategyModelProps> = (props) => {
               initialValue={current.initPlanBuyPercent}
               tooltip="-0.08~-0.03 初仓首次下浮比例,随首次数增加比例增大"
               fieldProps={{ addonAfter: '%' }}
-              min={-0.001}
+              min={-0.00001}
               max={0}
             />
           </Col>
