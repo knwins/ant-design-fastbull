@@ -1,12 +1,18 @@
+import { ProDescriptions, ProDescriptionsItemProps } from '@ant-design/pro-components';
 import type { ActionType, ProColumns } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
 import { FormattedMessage, useIntl } from '@umijs/max';
-import React, { useRef } from 'react';
-import { SpotItem } from './data';
+import { Drawer } from 'antd';
+import React, { useRef, useState } from 'react';
+import { SpotItem, SpotParams } from './data';
 import { querySpotList } from './service';
 
 const Spot: React.FC = () => {
   const actionRef = useRef<ActionType>();
+
+  const [params, setParams] = useState<Partial<SpotParams> | undefined>(undefined);
+  const [showDetail, setShowDetail] = useState<boolean>(false);
+  const [currentRow, setCurrentRow] = useState<SpotItem | undefined>(undefined);
 
   //国际化
   const intl = useIntl();
@@ -24,6 +30,7 @@ const Spot: React.FC = () => {
       hideInSearch: true,
       hideInForm: true,
       align: 'center',
+      hideInTable: true,
     },
 
     {
@@ -33,9 +40,10 @@ const Spot: React.FC = () => {
       hideInDescriptions: true,
       hideInTable: true,
       valueType: 'text',
-      fieldProps:{placeholder:intl.formatMessage({id:"pages.spot.coin.username.placeholder"})}
+      fieldProps: {
+        placeholder: intl.formatMessage({ id: 'pages.spot.coin.username.placeholder' }),
+      },
     },
-
 
     {
       title: <FormattedMessage id="pages.spot.coin.symbol" />,
@@ -46,9 +54,25 @@ const Spot: React.FC = () => {
 
     {
       title: <FormattedMessage id="pages.spot.coin.username" />,
-      dataIndex: ['user','name'],
+      dataIndex: ['user', 'name'],
       hideInSearch: true,
       valueType: 'text',
+
+      render: (dom, entity) => {
+        return (
+          <a
+            onClick={() => {
+              const params: SpotParams = {
+                userId: entity.user.id,
+              };
+              setParams(params);
+              actionRef.current?.reloadAndRest?.();
+            }}
+          >
+            {dom}
+          </a>
+        );
+      },
     },
 
     {
@@ -83,6 +107,7 @@ const Spot: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
+      hideInTable: true,
     },
 
     {
@@ -91,6 +116,7 @@ const Spot: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
+      hideInTable: true,
     },
 
     {
@@ -105,6 +131,7 @@ const Spot: React.FC = () => {
       dataIndex: 'moneyTotal',
       valueType: 'text',
       hideInSearch: true,
+
       hideInForm: true,
     },
 
@@ -114,6 +141,7 @@ const Spot: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
+      hideInTable: true,
     },
 
     {
@@ -123,18 +151,63 @@ const Spot: React.FC = () => {
       hideInSearch: true,
       hideInForm: true,
     },
+
+    {
+      title: <FormattedMessage id="pages.option" />,
+      dataIndex: 'option',
+      valueType: 'option',
+      hideInDescriptions: true,
+      render: (_, record) => [
+        <a
+          key="detail"
+          onClick={(e) => {
+            setCurrentRow(record);
+            setShowDetail(true);
+          }}
+        >
+          <FormattedMessage id="pages.detail" />
+        </a>,
+      ],
+    },
   ];
   return (
-    <ProTable<SpotItem>
-      actionRef={actionRef}
-      rowKey={(record) => record.id}
-      search={{
-        labelWidth: 80,
-      }}
-      pagination={paginationProps}
-      request={querySpotList}
-      columns={columns}
-    />
+    <>
+      <ProTable<SpotItem>
+        actionRef={actionRef}
+        rowKey={(record) => record.id}
+        search={{
+          labelWidth: 80,
+        }}
+        params={params}
+        pagination={paginationProps}
+        request={querySpotList}
+        columns={columns}
+      />
+
+      <Drawer
+        width={600}
+        open={showDetail}
+        onClose={() => {
+          setCurrentRow(undefined);
+          setShowDetail(false);
+        }}
+        closable={false}
+      >
+        {currentRow?.id && (
+          <ProDescriptions<SpotItem>
+            column={1}
+            title={currentRow?.name}
+            request={async () => ({
+              data: currentRow || {},
+            })}
+            params={{
+              id: currentRow?.id,
+            }}
+            columns={columns as ProDescriptionsItemProps<SpotItem>[]}
+          />
+        )}
+      </Drawer>
+    </>
   );
 };
 export default Spot;
