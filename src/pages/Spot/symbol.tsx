@@ -57,7 +57,7 @@ const Spot: React.FC = () => {
       dataIndex: ['user', 'name'],
       hideInSearch: true,
       valueType: 'text',
-
+ copyable: true,
       render: (dom, entity) => {
         return (
           <a
