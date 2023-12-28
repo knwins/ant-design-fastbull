@@ -125,7 +125,7 @@ const SpotStrategyTrackDownModel: React.FC<SpotStrategyModelProps> = (props) => 
         />
 
         <ProFormDigit
-          name="subFristLastHoldPercent"
+          name="subLastHoldPercent"
           label="尾仓盈利达"
           width={140}
           rules={[
