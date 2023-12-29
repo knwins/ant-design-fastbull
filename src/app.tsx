@@ -116,7 +116,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       key="website"
     >
       <ChromeOutlined />
-      <span>WebSite</span>
+      <span>FastBull.IO</span>
     </a>,
     <a
       href="https://twitter.com/FastBull_IO"
