@@ -7,7 +7,7 @@ import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser, privilegeMenus } from './services/api';
-import { DeploymentUnitOutlined, DollarOutlined, SettingOutlined, SlackOutlined, SmileOutlined, TransactionOutlined, UserOutlined } from '@ant-design/icons';
+import { ChromeOutlined, DeploymentUnitOutlined, DollarOutlined, SettingOutlined, SlackOutlined, SmileOutlined, TransactionOutlined, TwitterOutlined, UserOutlined, WeiboOutlined } from '@ant-design/icons';
 import type { MenuDataItem } from '@ant-design/pro-layout';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -109,7 +109,24 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
         width: '331px',
       },
     ],
-    links: isDev ? [<span>Telephone:13800000000</span>] : [<span>Telephone:13800000000</span>],
+    links: isDev ? [ <a
+      href="https://www.fastbull.io"
+      target="_blank"
+      rel="noopener noreferrer"
+      key="website"
+    >
+      <ChromeOutlined />
+      <span>WebSite</span>
+    </a>,
+    <a
+      href="https://twitter.com/FastBull_IO"
+      target="_blank"
+      rel="noopener noreferrer"
+      key="FastBull"
+    >
+      <TwitterOutlined />
+      <span> @FastBull_IO</span>
+    </a>],
     menuHeaderRender: undefined,
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
