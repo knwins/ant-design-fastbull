@@ -109,7 +109,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
         width: '331px',
       },
     ],
-    links: isDev ? [ <a
+    links: isDev ? [<span>Telephone:13800000000</span>]:[ <a
       href="https://www.fastbull.io"
       target="_blank"
       rel="noopener noreferrer"
