@@ -152,15 +152,20 @@ const Future: React.FC = () => {
         },
       },
     },
-
-    {
-      title: <FormattedMessage id="pages.future.strategy.monitorIntervals" />,
-      dataIndex: 'monitorIntervals',
+     {
+      title:<FormattedMessage id="pages.future.strategy.monitorThrendTypes" />,
+      dataIndex: 'monitorThrendTypes',
       valueType: 'text',
       width: '120px',
       hideInSearch: true,
     },
-
+    {
+      title:<FormattedMessage id="pages.future.strategy.monitorIntervals" />,
+      dataIndex:'monitorIntervals',
+      valueType: 'text',
+      width: '120px',
+      hideInSearch: true,
+    },
     {
       title: <FormattedMessage id="pages.future.strategy.maxOrderNumber" />,
       dataIndex: 'maxOrderNumber',

@@ -246,10 +246,14 @@ export default {
   'pages.future.strategy.state': '状态',
   'pages.future.strategy.state.required': '请选择状态',
   'pages.future.strategy.state.placeholder': '请选择状态',
-
-  'pages.future.strategy.monitorIntervals': '监测模块',
-  'pages.future.strategy.monitorIntervals.required': '请输入监测策略',
-  'pages.future.strategy.monitorIntervals.placeholder': '请输入监测策略',
+  
+  'pages.future.strategy.monitorThrendTypes': '监测模块X',
+  'pages.future.strategy.monitorThrendTypes.required': '请输入监测策略',
+  'pages.future.strategy.monitorThrendTypes.placeholder': '请输入监测策略',
+  
+  'pages.future.strategy.monitorIntervals': '监测时间级别',
+  'pages.future.strategy.monitorIntervals.required': '请输入监测时间级别',
+  'pages.future.strategy.monitorIntervals.placeholder': '请输入监测时间级别',
 
   'pages.future.strategy.maxOrderNumber': '实时最大订单数量',
   'pages.future.strategy.maxOrderNumber.required': '请输入实时最大订单数量',

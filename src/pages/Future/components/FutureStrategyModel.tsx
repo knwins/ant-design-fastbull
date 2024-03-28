@@ -74,11 +74,30 @@ const FutureStrategyModel: React.FC<FutureStrategyModelProps> = (props) => {
       />
 
       <ProFormText
+        name="monitorThrendTypes"
+        label={intl.formatMessage({
+          id: 'pages.future.strategy.monitorThrendTypes',
+        })}
+        width="lg"
+        fieldProps={{ addonAfter: 'X1,X2,X3' }}
+        rules={[
+          {
+            required: true,
+            message: intl.formatMessage({
+              id: 'pages.future.strategy.monitorThrendTypes.required',
+            }),
+          },
+        ]}
+        initialValue={current.monitorThrendTypes}
+      />
+
+<ProFormText
         name="monitorIntervals"
         label={intl.formatMessage({
           id: 'pages.future.strategy.monitorIntervals',
         })}
         width="lg"
+          fieldProps={{ addonAfter: 'MIN15,MIN30' }}
         rules={[
           {
             required: true,
@@ -89,6 +108,8 @@ const FutureStrategyModel: React.FC<FutureStrategyModelProps> = (props) => {
         ]}
         initialValue={current.monitorIntervals}
       />
+
+        
       <ProFormDigit
         name="maxOrderNumber"
         label={intl.formatMessage({
