@@ -67,25 +67,8 @@ const Thrend: React.FC = () => {
     {
       title: <FormattedMessage id="pages.coin.thrend.interval" />,
       dataIndex: 'interval',
-      valueType: 'select',
+      valueType: 'text',
       hideInForm: true,
-      valueEnum: {
-        MIN15: {
-          text: 'MIN15',
-          interval: 'MIN15',
-        },
-        MIN30: {
-          text: 'MIN30',
-          interval: 'MIN30',
-        },
-         HOUR1: {
-          text: 'HOUR1',
-          interval: 'HOUR1',
-        },
-         HOUR4: {
-          interval: 'HOUR4',
-        },
-      },
     },
     {
       title: <FormattedMessage id="pages.coin.thrend.message" />,
