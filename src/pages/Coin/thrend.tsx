@@ -39,45 +39,13 @@ const Thrend: React.FC = () => {
       title: <FormattedMessage id="pages.coin.thrend.symbolType" />,
       dataIndex: 'symbolType',
       hideInSearch: true,
-      valueType: 'select',
-      valueEnum: {
-        FUTURE: {
-          symbolType: 'FUTURE',
-        },
-        SPOT: {
-          symbolType: 'SPOT',
-        },
-      },
+      valueType: 'text',
     },
 
     {
       title: <FormattedMessage id="pages.coin.thrend.threndType" />,
       dataIndex: 'threndType',
       valueType: 'select',
-       valueEnum: {
-        X1_LONG: {
-          threndType: 'X1_LONG',
-        },
-         X1_SHORT: {
-          threndType: 'X1_SHORT',
-        },
-         X2_LONG: {
-          text: 'X2_LONG',
-          threndType: 'X2_LONG',
-        },
-         X2_SHORT: {
-          text: 'X2_SHORT',
-          threndType: 'X2_SHORT',
-        },
-           X3_LONG: {
-          text: 'X3_LONG',
-          threndType: 'X3_LONG',
-        },
-         X3_SHORT: {
-          text: 'X3_SHORT',
-          threndType: 'X3_SHORT',
-        },
-      },
     },
 
     {
