@@ -25,7 +25,8 @@ const Task: React.FC = () => {
       dataIndex: 'name',
       hideInSearch: true,
       valueType: 'text',
-      width: '120px',
+      width: 'md',
+      ellipsis:true,
     },
 
     {
