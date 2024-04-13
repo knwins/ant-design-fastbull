@@ -33,7 +33,8 @@ const Task: React.FC = () => {
       dataIndex: 'description',
       hideInSearch: true,
       valueType: 'text',
-      width: '280px',
+      width: 'md',
+      ellipsis:true,
     },
 
     {
@@ -43,7 +44,8 @@ const Task: React.FC = () => {
       hideInSearch: true,
       fieldProps: { size: 'small' },
       hideInForm: true,
-      width: '160px',
+      ellipsis:true,
+      width: 'md',
       render: (text, record, _, action) => {
         if (record.httpurl) {
           return [
@@ -59,11 +61,12 @@ const Task: React.FC = () => {
     {
       title: <FormattedMessage id="pages.task.lastUpdateTime" />,
       dataIndex: 'lastUpdateTime',
+      fieldProps: { size: '10' },
       valueType: 'dateTime',
       hideInSearch: true,
       hideInForm: true,
       align: 'center',
-      width: '160px',
+      ellipsis:true,
     },
 
     {
