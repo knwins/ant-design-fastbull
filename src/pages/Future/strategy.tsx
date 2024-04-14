@@ -132,7 +132,6 @@ const Future: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
-      width: '120px',
     },
 
     {
@@ -140,7 +139,6 @@ const Future: React.FC = () => {
       dataIndex: 'state',
       hideInSearch: true,
       valueType: 'text',
-      width: '120px',
       valueEnum: {
         false: {
           text: <FormattedMessage id="pages.close" />,
@@ -181,7 +179,6 @@ const Future: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
-      width: 'md',
     },
     {
       title: '方向',
@@ -189,7 +186,6 @@ const Future: React.FC = () => {
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,
-      width: 'md',
     },
     {
       title: <FormattedMessage id="pages.option" />,
