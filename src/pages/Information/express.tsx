@@ -132,6 +132,7 @@ const Express: React.FC = () => {
       dataIndex: 'createTime',
       valueType: 'dateTime',
       hideInSearch: true,
+      width:'md'
     },
 
     {
@@ -139,6 +140,7 @@ const Express: React.FC = () => {
       dataIndex: 'title',
       valueType: 'text',
       hideInSearch: true,
+      width:'lg',
       ellipsis:true,
     },
 
@@ -161,6 +163,7 @@ const Express: React.FC = () => {
       dataIndex: 'hitCount',
       valueType: 'text',
       hideInSearch: true,
+      width:'md'
     },
     {
       title: <FormattedMessage id="pages.express.username" />,
