@@ -183,6 +183,7 @@ const Notice: React.FC = () => {
       dataIndex: 'title',
       valueType: 'text',
       width: '360px',
+      ellipsis:true,
     },
 
     {
