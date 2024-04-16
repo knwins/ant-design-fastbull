@@ -139,6 +139,7 @@ const Express: React.FC = () => {
       dataIndex: 'title',
       valueType: 'text',
       hideInSearch: true,
+      ellipsis:true,
     },
 
     {
@@ -166,6 +167,7 @@ const Express: React.FC = () => {
       dataIndex: ['user', 'name'],
       valueType: 'text',
       hideInSearch: true,
+      hideInTable:true,
     },
 
     {
@@ -173,6 +175,7 @@ const Express: React.FC = () => {
       dataIndex: 'showEndtime',
       valueType: 'date',
       hideInSearch: true,
+      hideInTable:true,
     },
 
     {
