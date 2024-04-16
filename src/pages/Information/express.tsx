@@ -163,7 +163,7 @@ const Express: React.FC = () => {
       dataIndex: 'hitCount',
       valueType: 'text',
       hideInSearch: true,
-      width:'md'
+      width:'xs'
     },
     {
       title: <FormattedMessage id="pages.express.username" />,
