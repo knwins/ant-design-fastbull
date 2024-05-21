@@ -129,6 +129,13 @@ const Thrend: React.FC = () => {
       hideInSearch: true,
     },
 
+     {
+      title:"趋势",
+      dataIndex: 'side',
+      valueType: 'text',
+      hideInSearch: true,
+    },
+
     {
       title: <FormattedMessage id="pages.coin.symbolType" />,
       dataIndex: 'symbolType',
