@@ -130,7 +130,7 @@ const Thrend: React.FC = () => {
     },
 
      {
-      title:"趋势",
+      title:"趋势(HOUR2)",
       dataIndex: 'side',
       valueType: 'text',
       hideInSearch: true,
