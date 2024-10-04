@@ -2,6 +2,7 @@ export type CoinPriceItem = {
   id: string;
   symbol: string;
   symbolType: string;
+  exchangeType: string;
   exchange: string;
   buyPrice: string;
   sellPrice: string;
