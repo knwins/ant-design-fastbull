@@ -38,76 +38,87 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
       <ProFormText name="id" hidden={true} initialValue={current.id} />
 
       <ProFormText
-          name="name"
-          label={intl.formatMessage({
-            id: 'pages.coin.name',
-          })}
-          width="lg"
-          placeholder={intl.formatMessage({
-            id: 'pages.coin.name.placeholder',
-          })}
-          rules={[
-            {
-              required: true,
-              message: intl.formatMessage({
-                id: 'pages.coin.name.required',
-              }),
-            },
-          ]}
-          initialValue={current.name}
-        />
-        <ProFormText
-          name="symbol"
-          label={intl.formatMessage({
-            id: 'pages.coin.symbol',
-          })}
-          width="lg"
-          placeholder={intl.formatMessage({
-            id: 'pages.coin.symbol.placeholder',
-          })}
-          rules={[
-            {
-              required: true,
-              message: intl.formatMessage({
-                id: 'pages.coin.symbol.required',
-              }),
-            },
-          ]}
-          initialValue={current.symbol}
-        />
+        name="name"
+        label={intl.formatMessage({
+          id: 'pages.coin.name',
+        })}
+        width="lg"
+        placeholder={intl.formatMessage({
+          id: 'pages.coin.name.placeholder',
+        })}
+        rules={[
+          {
+            required: true,
+            message: intl.formatMessage({
+              id: 'pages.coin.name.required',
+            }),
+          },
+        ]}
+        initialValue={current.name}
+      />
+      <ProFormText
+        name="symbol"
+        label={intl.formatMessage({
+          id: 'pages.coin.symbol',
+        })}
+        width="lg"
+        placeholder={intl.formatMessage({
+          id: 'pages.coin.symbol.placeholder',
+        })}
+        rules={[
+          {
+            required: true,
+            message: intl.formatMessage({
+              id: 'pages.coin.symbol.required',
+            }),
+          },
+        ]}
+        initialValue={current.symbol}
+      />
 
-        <ProFormSelect
-          name="symbolType"
-          label={intl.formatMessage({
-            id: 'pages.coin.symbolType',
-          })}
-          width="lg"
-          placeholder={intl.formatMessage({
-            id: 'pages.coin.symbolType.placeholder',
-          })}
-          options={[
-            { label: 'Future', value: 'FUTURE' },
-            { label: 'Spot', value: 'SPOT' },
-          ]}
-          initialValue={current.symbolType}
-        />
+      <ProFormSelect
+        name="exchangeType"
+        label="交易类型"
+        width="lg"
+        placeholder="请选择交易类型"
+        options={[
+          { label: '币安交易所', value: "BINANCE" },
+          { label: 'ZKSyncEra', value: "ZKSYNC_ERA" },
+        ]}
+      />
+
+      <ProFormSelect
+        name="symbolType"
+        label={intl.formatMessage({
+          id: 'pages.coin.symbolType',
+        })}
+        width="lg"
+        placeholder={intl.formatMessage({
+          id: 'pages.coin.symbolType.placeholder',
+        })}
+        options={[
+          { label: 'Future', value: 'FUTURE' },
+          { label: 'Spot', value: 'SPOT' },
+        ]}
+        initialValue={current.symbolType}
+      />
 
 
-        <ProFormSelect
-          name="state"
-          label={intl.formatMessage({
-            id: 'pages.coin.state',
-          })}
-          width="lg"
-          placeholder={intl.formatMessage({
-            id: 'pages.coin.state.placeholder',
-          })}
-          options={[
-            { label: '开启', value:"ON"},
-            { label: '关闭', value: "OFF" },
-          ]}
-          initialValue={current.state}
-        />
+      <ProFormSelect
+        name="state"
+        label={intl.formatMessage({
+          id: 'pages.coin.state',
+        })}
+        width="lg"
+        placeholder={intl.formatMessage({
+          id: 'pages.coin.state.placeholder',
+        })}
+        options={[
+          { label: '开启', value: "ON" },
+          { label: '关闭', value: "OFF" },
+        ]}
+        initialValue={current.state}
+      />
     </ModalForm>
   );
 };

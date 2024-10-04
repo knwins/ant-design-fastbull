@@ -17,6 +17,7 @@ export type pagination = {
 export type CoinThrendItem = {
   id: string;
   symbol: string;
+  side:string;
   symbolType: string;
   threndType: string;
   longShort: string;

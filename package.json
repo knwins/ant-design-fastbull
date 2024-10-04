@@ -117,5 +117,12 @@
       "CNAME",
       "create-umi"
     ]
-  }
+  },
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

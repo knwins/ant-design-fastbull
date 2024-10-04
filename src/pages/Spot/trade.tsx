@@ -128,8 +128,8 @@ const SpotTrade: React.FC = () => {
     
 
     {
-      title: <FormattedMessage id="pages.spot.trade.tradeType" />,
-      dataIndex: 'tradeType',
+      title: "方向",
+      dataIndex: 'side',
       valueType: 'text',
       hideInSearch: true,
       hideInForm: true,

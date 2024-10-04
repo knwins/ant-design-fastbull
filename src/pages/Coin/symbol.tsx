@@ -129,6 +129,13 @@ const Thrend: React.FC = () => {
       hideInSearch: true,
     },
 
+     {
+      title:"趋势(HOUR2)",
+      dataIndex: 'side',
+      valueType: 'text',
+      hideInSearch: true,
+    },
+
     {
       title: <FormattedMessage id="pages.coin.symbolType" />,
       dataIndex: 'symbolType',
@@ -141,6 +148,20 @@ const Thrend: React.FC = () => {
         SPOT: {
           text: 'Spot',
           symbolType: 'SPOT',
+        },
+      },
+    },
+
+    {
+      title:'交易类型',
+      dataIndex: 'exchangeType',
+
+      valueEnum: {
+        BINANCE: {
+          text: '币安交易所',
+        },
+        ZKSYNC_ERA: {
+          text: 'ZKSyncEra',
         },
       },
     },

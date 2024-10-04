@@ -74,6 +74,17 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
         />
 
         <ProFormSelect
+          name="exchangeType"
+          label="交易类型"
+          width="lg"
+          placeholder="请选择交易类型"
+          options={[
+            { label: '币安交易所', value: "BINANCE" },
+            { label: 'ZKSyncEra', value: "ZKSYNC_ERA" },
+          ]}
+        />
+
+        <ProFormSelect
           name="symbolType"
           label={intl.formatMessage({
             id: 'pages.coin.symbolType',
@@ -98,7 +109,7 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
             id: 'pages.coin.state.placeholder',
           })}
           options={[
-            { label: '开启', value: "ON"},
+            { label: '开启', value: "ON" },
             { label: '关闭', value: "OFF" },
           ]}
         />
